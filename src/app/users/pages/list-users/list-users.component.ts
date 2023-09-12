@@ -1,9 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FiltersForm, User } from '../../interfaces/user.interface';
-import { UserService } from '../../services/user.service';
 import { FormGroup, FormControl} from "@angular/forms";
+import { UserService } from '../../services/user.service';
+
+import { FiltersForm, User } from '../../interfaces/user.interface';
 import { Subscription } from "rxjs";
 import { debounceTime, tap} from "rxjs/operators";
+import { MatDialog } from '@angular/material/dialog';
+
+import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
+
 
 @Component({
   selector: 'app-list-users',
@@ -30,7 +35,7 @@ export class ListUsersComponent implements OnInit, OnDestroy{
 
   formSubscription!:Subscription;
 
-  constructor(private userService:UserService) {
+  constructor(private userService:UserService, public dialog:MatDialog ) {
     
   }
   ngOnInit(): void {
@@ -42,6 +47,10 @@ export class ListUsersComponent implements OnInit, OnDestroy{
     this.loading = true;
 
     this.userService.getUsersFiltered(this.filters).subscribe(users => {
+      if(!users.length){
+        this.showDialog()
+        throw new Error('some error getting users')
+      }
       this.users = users
     })
 
@@ -65,7 +74,10 @@ export class ListUsersComponent implements OnInit, OnDestroy{
             order: form.order
           }
           
-          this.userService.getUsersFiltered(this.filters).subscribe(users => {
+          this.userService.getUsersFiltered(this.filters).subscribe((users) => {
+            if(!users){             
+              throw new Error('No users Found')
+            }
             this.users = users
           })
           
@@ -77,6 +89,10 @@ export class ListUsersComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
     this.formSubscription.unsubscribe()
+  }
+
+  showDialog(){
+    this.dialog.open(DialogComponent)
   }
 
 

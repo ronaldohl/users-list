@@ -11,18 +11,24 @@
         <input type="text" matInput formControlName="query" placeholder="name or email">
     </mat-form-field>
 
-    <mat-button-toggle-group formControlName="orderBy">
-        <mat-button-toggle value="name">Order by name</mat-button-toggle>
-        <mat-button-toggle value="email">Order by email</mat-button-toggle>
-    </mat-button-toggle-group>
-    <mat-button-toggle-group formControlName="order">
-        <mat-button-toggle value="DESC">
-            <mat-icon>arrow_upward_alt</mat-icon>
-        </mat-button-toggle>
-        <mat-button-toggle value="ASC">
-            <mat-icon>arrow_downward_alt</mat-icon>
-        </mat-button-toggle>
-    </mat-button-toggle-group>
+    <div class="">
+        <p>Order By</p>
+        <mat-button-toggle-group formControlName="orderBy">
+            <mat-button-toggle value="name">name</mat-button-toggle>
+            <mat-button-toggle value="email">email</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div class="">
+        <p>Order</p>
+        <mat-button-toggle-group formControlName="order">
+            <mat-button-toggle value="DESC" matTooltip="sort ASC"  >
+                <mat-icon matTooltip="sort desc">arrow_upward_alt</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="ASC"   >
+                <mat-icon >arrow_downward_alt</mat-icon>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
 </form>
 
 <div class="grid-cards" *ngIf="users.length">

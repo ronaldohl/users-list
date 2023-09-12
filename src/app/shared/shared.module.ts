@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { LoadingComponent } from './loading/loading.component';
 import { ErrorMessageComponent } from './error-message/error-message.component';
 import { MaterialModule } from '../material/material.module';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 
 @NgModule({
   declarations: [
     LoadingComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { MaterialModule } from '../material/material.module';
   ],
   exports: [
     LoadingComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    DialogComponent
   ]
 })
 export class SharedModule { }
