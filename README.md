@@ -3,10 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 ## About
-
-The aplication takes the local information hosted in "assets/users-data.json", the aplication contain one page which display de information of users in cards, contain searching by name or email and order by name|email and ascending|descending sort.
-When a user dont have a avatar img, display a generic img.
-If at **first** time that try to get a json file and an error happens, it will be show a dialog.
+The webapp takes the local information hosted in "assets/users-data.json", The webapp contains one page that displays de information of users in cards, contains searching by name or email and order by name|email and ascending|descending sort. When a user doesn't have an avatar image, display a generic image. If at first time you try to get a JSON file an error happens, it will show a dialog.
 
 ## Development server
 
