@@ -10,6 +10,8 @@ If at **first** time that try to get a json file and an error happens, it will b
 
 ## Development server
 
+Install the dependencies with `npm install`
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 
