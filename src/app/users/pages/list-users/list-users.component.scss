@@ -2,6 +2,7 @@ form{
     margin: 1rem auto;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
@@ -9,7 +10,7 @@ form{
         display: flex;
         align-items: center;
         width: 100%;
-        max-width: 40vw;
+        max-width: 22rem;
     }
 }
 .grid-cards{

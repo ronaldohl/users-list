@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
+## About
+
+The aplication takes the local information hosted in "assets/users-data.json", the aplication contain one page which display de information of users in cards, contain searching by name or email and order by name|email and ascending|descending sort.
+When a user dont have a avatar img, display a generic img.
+If at **first** time that try to get a json file and an error happens, it will be show a dialog.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

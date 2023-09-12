@@ -4,7 +4,7 @@
     </mat-card-header>
     <img mat-card-image class="card-img" [src]="user|userImage" alt="Photo of a Shiba Inu">
     <mat-card-content>
-        <p class="mat-subtitle-1">User Info:</p>
+        <p class="mat-subtitle-1 card-subtitle">User Info:</p>
         <a [href]="'mailto:'+user.email" class="card-email-link">
             <mat-icon>mail</mat-icon>
             {{user.email}}
