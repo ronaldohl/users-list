@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -31,7 +32,8 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
     MatInputModule,
     MatFormFieldModule,
     MatMenuModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule { }
