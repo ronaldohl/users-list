@@ -1,0 +1,32 @@
+
+
+<h1>Users List</h1>
+<mat-divider></mat-divider>
+
+
+<form [formGroup]="filtersForm">
+    <mat-form-field class="input-search" >
+        <mat-label>Search User by name or email</mat-label>
+        <input type="text" matInput formControlName="query" placeholder="name or email">
+    </mat-form-field>
+    <mat-button-toggle-group formControlName="orderBy">
+        <mat-button-toggle value="name">Order by name</mat-button-toggle>
+        <mat-button-toggle value="email">Order by email</mat-button-toggle>
+    </mat-button-toggle-group>
+    
+    <mat-button-toggle-group formControlName="order">
+        <mat-button-toggle value="DESC">
+            <mat-icon>arrow_upward_alt</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="ASC">
+            <mat-icon>arrow_downward_alt</mat-icon>
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+</form>
+
+<mat-grid-list cols="3" gutterSize="20px" rowHeight="3:4">
+    <mat-grid-tile *ngFor="let user of users ">
+        <app-user [user]="user"></app-user>
+    </mat-grid-tile>
+</mat-grid-list>
+<router-outlet></router-outlet>
